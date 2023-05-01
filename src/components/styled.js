@@ -18,13 +18,18 @@ body {
     background: #000000;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, sans-serif, Roboto;
+    font-family: 'SUIT', sans-serif, Roboto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-div, span {
+div, span, input, button {
     box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    inline-height: 0;
 }
 `
