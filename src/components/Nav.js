@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Nav = () => {
     return (
         <Container>
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
                 chevron_left
             </span>
         </Container>

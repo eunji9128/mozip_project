@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import LockForm from "./LockForm";
 
 export const SignupName = () => {
     return (
@@ -13,7 +14,12 @@ export const SignupName = () => {
 
 export const SignupBirth = () => {
     return (
-        <h1>Signup birth</h1>
+        <Container>
+            <h1>생년월일을 입력해주세요</h1>
+            <Content>프로젝트 추천에만 활용되며 다른 곳에 사용되지 않아요.</Content>
+            <LockForm />
+            {/* <StyledBtn>다음</StyledBtn> */}
+        </Container>
     )
 };
 
