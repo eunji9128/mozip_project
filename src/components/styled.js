@@ -23,4 +23,8 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+div, span {
+    box-sizing: border-box;
+}
 `
