@@ -5,17 +5,21 @@ import _ from "lodash";
 function LockForm() {
     const [numbers, setNumbers] = useState([1999, 1, 1]);
 
-    const handleNumberChange = _.throttle((index, value) => {
+    const handleNumberChange = _.throttle((index, e) => {
+        e.preventDefault();
+        let value = parseInt(e.target.value);
         setNumbers((prevNumbers) => {
             const newNumbers = [...prevNumbers];
             switch (index) {
                 case 0:
                     newNumbers[index] = value;
+                    break;
                 case 1:
-                    newNumbers[index] = value % 12 + 1;
-                    console.log(index, newNumbers[index]);
+                    newNumbers[index] = Math.max(value%13, 1);
+                    break;
                 case 2:
-                    newNumbers[index] = value % 31 + 1;
+                    newNumbers[index] = Math.max(value%32, 1);
+                    break;
             }
             return newNumbers;
         });
@@ -24,7 +28,6 @@ function LockForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // 입력된 숫자 값 처리
-        console.log(numbers.join(""));
     };
 
     return (
@@ -35,7 +38,7 @@ function LockForm() {
                         type="number"
                         key={index}
                         value={number}
-                        onChange={(e) => handleNumberChange(index, e.target.value)}
+                        onChange={(e) => handleNumberChange(index, e)}
                     />
                 ))}
             </Box>
