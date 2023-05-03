@@ -1,13 +1,14 @@
 import './App.css';
 import Nav from './components/Nav';
-import { SignupBirth, SignupName } from './components/Signup';
+import { Favorites, SignupBirth, SignupName } from './components/Signup';
 
 function App() {
   return (
     <div className="App">
       <Nav />
       {/* <SignupName /> */}
-      <SignupBirth />
+      {/* <SignupBirth /> */}
+      <Favorites />
     </div>
   );
 }

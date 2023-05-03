@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import LockForm from "./LockForm";
+import FavBlocks from "./FavBlocks";
 
 export const SignupName = () => {
     return (
@@ -23,9 +24,24 @@ export const SignupBirth = () => {
     )
 };
 
+export const Favorites = () => {
+    return (
+        <Container>
+            <h1>관심사를 선택해주세요!</h1>
+            <Content>
+                좋아하거나 알아가고 싶은 관심사를 1개 이상 선택해주세요.<br />
+                내 관심사에 딱 맞는 프로젝트를 추천해드릴게요!
+            </Content>
+            <FavBlocks />
+        </Container>
+    )
+}
+
+
 const Container = styled.div`
     width: 100vw;
     padding: 16px;
+    text-align: left;
 `
 
 const Content = styled.p`
