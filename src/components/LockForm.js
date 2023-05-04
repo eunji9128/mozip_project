@@ -73,7 +73,7 @@ const StyledInput = styled.input`
 const StyledBtn = styled.button`
     width: 90%;
     height: 52px;
-    background-color: #5b5b5b;
+    background-color: #d4d4d4;
     border: none;
     border-radius: 10px;
     position: absolute;

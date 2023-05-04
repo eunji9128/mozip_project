@@ -34,4 +34,8 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     inline-height: 0;
 }
+
+*:disabled {
+    background: #5b5b5b;
+}
 `

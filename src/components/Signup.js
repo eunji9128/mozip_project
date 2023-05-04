@@ -2,18 +2,28 @@ import styled from "styled-components";
 import LockForm from "./LockForm";
 import FavBlocks from "./FavBlocks";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export const SignupName = () => {
     let navigate = useNavigate();
+    let [username, setUsername] = useState('');
+    let [disabled, setDisabled] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(document.getElementById('username').value);
+        setUsername(document.getElementById('username').value);
+        console.log();
         navigate('/birth');
         // 서버 포스트 or 스토리지 저장 코드 입력
     }
+
+    const handleDisable = (e) => {
+        e.preventDefault();
+        if (e.target.value) {setDisabled(false)}
+        else {setDisabled(true)}
+    }
+
     return (
-        
         <Container>
             <h1>당신의 이름은 무엇인가요?</h1>
             <Content>모집은 당신이 궁금해요!</Content>
@@ -22,8 +32,12 @@ export const SignupName = () => {
                     placeholder={"이름 입력하기"}
                     name="username"
                     id="username"
+                    onChange={(e) => handleDisable(e)}
                 ></StyledInput>
-                <StyledBtn type="submit">다음</StyledBtn>
+                <StyledBtn 
+                    type="submit"
+                    disabled={disabled}
+                >다음</StyledBtn>
             </form>
         </Container>
     )
@@ -78,7 +92,7 @@ const StyledInput = styled.input`
 const StyledBtn = styled.button`
     width: 90%;
     height: 52px;
-    background-color: #5b5b5b;
+    background-color: #d4d4d4;
     border: none;
     border-radius: 10px;
     position: absolute;

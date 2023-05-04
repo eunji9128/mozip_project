@@ -120,7 +120,10 @@ const FavBlocks = () => {
                     </FlexBlock>
                 </FlexBlock>
             </Container>
-            <StyledBtn onClick={(e) => handleSubmit(e)}>선택완료</StyledBtn>
+            <StyledBtn 
+                onClick={(e) => handleSubmit(e)}
+                disabled={selected.length > 0 ? false : true}    
+            >선택완료</StyledBtn>
         </>
     )
 };
@@ -158,7 +161,7 @@ const Container = styled.div`
 const StyledBtn = styled.button`
     width: 90%;
     height: 52px;
-    background-color: #5b5b5b;
+    background-color: #d4d4d4;
     border: none;
     border-radius: 10px;
     position: absolute;
