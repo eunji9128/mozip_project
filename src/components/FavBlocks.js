@@ -1,10 +1,28 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const FavBlocks = () => {
+    let [selected, setSelected] = useState([]);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e);
+        console.log(selected);
+        // storage 저장하는 코드 입력
     };
+
+    const handleSelect = (e) => {
+        e.preventDefault();
+        const targetId = e.target.closest("[id]").id;
+        let copy = [...selected];
+        copy.push(targetId);
+        setSelected(copy);
+
+        console.log(selected, targetId);
+        if (targetId === "pet") {
+            document.getElementById(targetId).style.background = "url(/favSpBlockActive.svg)"
+        }
+        else {document.getElementById(targetId).style.background = "#d4d4d4"}
+    }
 
     return (
         <>
@@ -16,6 +34,8 @@ const FavBlocks = () => {
                             height={"180px"}
                             bgColor={"#737373"}
                             margin={"0 16px 16px 0"}
+                            id="uiux"
+                            onClick={(e) => handleSelect(e)}
                         >
                             <Content>
                                 UX UI<br />DESIGN
@@ -26,6 +46,8 @@ const FavBlocks = () => {
                             height={"94px"}
                             bgColor={"#737373"}
                             margin={"0 16px 16px 0"}
+                            id="travel"
+                            onClick={(e) => handleSelect(e)}
                         >
                             <Content>
                                 TRAVEL
@@ -38,6 +60,8 @@ const FavBlocks = () => {
                             height={"290px"}
                             bgColor={"#737373"}
                             margin={"0 16px 16px 0"}
+                            id="research"
+                            onClick={(e) => handleSelect(e)}
                         >
                             <Content>
                                 UX<br />RESEARCH
@@ -51,6 +75,8 @@ const FavBlocks = () => {
                         height={"180px"}
                         bgColor={"url(/favSpBlock.svg)"}
                         margin={"0 16px 16px 0"}
+                        id="pet"
+                        onClick={(e) => handleSelect(e)}
                     >
                         <Content>
                             <br />PET
@@ -61,6 +87,8 @@ const FavBlocks = () => {
                         height={"65px"}
                         bgColor={"#737373"}
                         margin={"0 16px 130px -80px"}
+                        id="startup"
+                        onClick={(e) => handleSelect(e)}
                     >
                         <Content>
                             START-UP
@@ -71,6 +99,8 @@ const FavBlocks = () => {
                         height={"100px"}
                         bgColor={"#737373"}
                         margin={"0 16px -62px -100px"}
+                        id="bx"
+                        onClick={(e) => handleSelect(e)}
                     >
                         <Content>
                             BX
@@ -81,6 +111,8 @@ const FavBlocks = () => {
                         height={"182px"}
                         bgColor={"#737373"}
                         margin={"0 16px 16px 0"}
+                        id="figma"
+                        onClick={(e) => handleSelect(e)}
                     >
                         <Content>
                             FIGMA
@@ -88,9 +120,7 @@ const FavBlocks = () => {
                     </FlexBlock>
                 </FlexBlock>
             </Container>
-            <FlexBlock width={"100vw"} alignItems={"center"}>
-                <StyledBtn onClick={(e) => handleSubmit(e)}>선택완료</StyledBtn>
-            </FlexBlock>
+            <StyledBtn onClick={(e) => handleSubmit(e)}>선택완료</StyledBtn>
         </>
     )
 };
