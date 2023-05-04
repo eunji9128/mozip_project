@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import _ from "lodash";
+import { useNavigate } from "react-router-dom";
 
 function LockForm() {
+    let navigate = useNavigate();
     const [numbers, setNumbers] = useState([1999, 1, 1]);
 
     const handleNumberChange = _.throttle((index, e) => {
@@ -27,7 +29,9 @@ function LockForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // 입력된 숫자 값 처리
+        console.log(numbers);
+        // 생년월일 서버 포스트 or 스토리지 저장 코드 입력
+        navigate('/favorites');
     };
 
     return (

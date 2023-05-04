@@ -4,13 +4,41 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './components/styled';
+import { Favorites, SignupBirth, SignupName } from './components/Signup';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+const basename = process.env.PUBLIC_URL;
+const routes = [
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: 'name',
+        element: <SignupName />,
+      },
+      {
+        path: 'birth',
+        element: <SignupBirth />,
+      },
+      {
+        path: 'favorites',
+        element: <Favorites />,
+      }
+    ]
+  },
+]
+
+const router = createBrowserRouter(routes, {basename: basename});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <>
     <GlobalStyle />
-    <App />
-  </React.StrictMode>
+    <RouterProvider router={router} />
+  </>  
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

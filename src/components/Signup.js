@@ -1,14 +1,30 @@
 import styled from "styled-components";
 import LockForm from "./LockForm";
 import FavBlocks from "./FavBlocks";
+import { useNavigate } from "react-router-dom";
 
 export const SignupName = () => {
+    let navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(document.getElementById('username').value);
+        navigate('/birth');
+        // 서버 포스트 or 스토리지 저장 코드 입력
+    }
     return (
+        
         <Container>
             <h1>당신의 이름은 무엇인가요?</h1>
             <Content>모집은 당신이 궁금해요!</Content>
-            <StyledInput placeholder={"이름 입력하기"}></StyledInput>
-            <StyledBtn>다음</StyledBtn>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <StyledInput 
+                    placeholder={"이름 입력하기"}
+                    name="username"
+                    id="username"
+                ></StyledInput>
+                <StyledBtn type="submit">다음</StyledBtn>
+            </form>
         </Container>
     )
 };
