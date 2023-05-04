@@ -1,48 +1,97 @@
 import styled from "styled-components";
 
 const FavBlocks = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(e);
+    };
+
     return (
-        <Container>
-            <FlexBlock justifyContent={"start"}>
-                <Block>
-                    <FlexBlock 
-                        width={"180px"} 
-                        height={"180px"} 
-                        bgColor={"#737373"} 
+        <>
+            <Container>
+                <FlexBlock justifyContent={"start"}>
+                    <Block>
+                        <FlexBlock
+                            width={"180px"}
+                            height={"180px"}
+                            bgColor={"#737373"}
+                            margin={"0 16px 16px 0"}
+                        >
+                            <Content>
+                                UX UI<br />DESIGN
+                            </Content>
+                        </FlexBlock>
+                        <FlexBlock
+                            width={"180px"}
+                            height={"94px"}
+                            bgColor={"#737373"}
+                            margin={"0 16px 16px 0"}
+                        >
+                            <Content>
+                                TRAVEL
+                            </Content>
+                        </FlexBlock>
+                    </Block>
+                    <Block>
+                        <FlexBlock
+                            width={"304px"}
+                            height={"290px"}
+                            bgColor={"#737373"}
+                            margin={"0 16px 16px 0"}
+                        >
+                            <Content>
+                                UX<br />RESEARCH
+                            </Content>
+                        </FlexBlock>
+                    </Block>
+                </FlexBlock>
+                <FlexBlock>
+                    <FlexBlock
+                        width={"180px"}
+                        height={"180px"}
+                        bgColor={"url(/favSpBlock.svg)"}
                         margin={"0 16px 16px 0"}
                     >
                         <Content>
-                            UX UI<br />DESIGN
+                            <br />PET
                         </Content>
                     </FlexBlock>
-                    <FlexBlock width={"180px"} height={"94px"} bgColor={"#737373"} margin={"0 16px 16px 0"}>
+                    <FlexBlock
+                        width={"164px"}
+                        height={"65px"}
+                        bgColor={"#737373"}
+                        margin={"0 16px 130px -80px"}
+                    >
                         <Content>
-                            TRAVEL
+                            START-UP
                         </Content>
                     </FlexBlock>
-                </Block>
-                <Block>
-                    <FlexBlock width={"180px"} height={"290px"} bgColor={"#737373"} margin={"0 16px 16px 0"}>
+                    <FlexBlock
+                        width={"84px"}
+                        height={"100px"}
+                        bgColor={"#737373"}
+                        margin={"0 16px -62px -100px"}
+                    >
                         <Content>
-                            UX<br />RESEARCH
+                            BX
                         </Content>
                     </FlexBlock>
-                </Block>
-            </FlexBlock>
-            <FlexBlock>
-                {/* <FlexBlock width={"100px"} height={"180px"} bgColor={"#8e8e8e"} margin={"0 16px 16px 0"}>
-                    <Content>
-                        PET
-                    </Content>
-                </FlexBlock> */}
-                <FlexBlock width={"180px"} height={"180px"} bgColor={"url(/favSpBlock.svg)"} margin={"0 16px 16px 0"}>
-                    <Content>
-                        <br />PET
-                    </Content>
+                    <FlexBlock
+                        width={"206px"}
+                        height={"182px"}
+                        bgColor={"#737373"}
+                        margin={"0 16px 16px 0"}
+                    >
+                        <Content>
+                            FIGMA
+                        </Content>
+                    </FlexBlock>
                 </FlexBlock>
-                {/* <FlexBlock width={"164px"} height={"65px"} bgColor={"#737373"} margin={"0 16px 16px -20px"} style={{zIndex: 4}}></FlexBlock> */}
+            </Container>
+            <FlexBlock width={"100vw"} alignItems={"center"}>
+                <StyledBtn onClick={(e) => handleSubmit(e)}>선택완료</StyledBtn>
             </FlexBlock>
-        </Container>
+        </>
     )
 };
 
@@ -70,19 +119,24 @@ const Content = styled.p`
 `
 
 const Container = styled.div`
-    width: 100vw;
+    width: 548px;
     padding: 16px;
     text-align: left;
     margin-top: 34px;
 `
 
-const SubBlock = styled(FlexBlock)`
-    width: 180px;
-    height: 180px;
-    background: url("/favSpBlock.svg");
-    // position: absolute;
-
-
+const StyledBtn = styled.button`
+    width: 90%;
+    height: 52px;
+    background-color: #5b5b5b;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    margin: 16px;
+    font-size: 16px;
+    font-weight: bold;
 `
 
 export default FavBlocks

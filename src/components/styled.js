@@ -16,6 +16,7 @@ font-size: 62.5%; // 1rem = 10px 로 변경 한 것, 바꾼 이유는 사파리�
 
 body {
     background: #000000;
+    width: 360px;
     margin: 0;
     padding: 0;
     font-family: 'SUIT', sans-serif, Roboto;
