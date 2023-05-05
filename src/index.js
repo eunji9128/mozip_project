@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './components/styled';
-import { Favorites, SignupBirth, SignupName } from './components/Signup';
+import { Favorites, ProfileSet, SignupBirth, SignupName } from './components/Signup';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const basename = process.env.PUBLIC_URL;
@@ -24,6 +24,10 @@ const routes = [
       {
         path: 'favorites',
         element: <Favorites />,
+      },
+      {
+        path: 'profile-set',
+        element: <ProfileSet />,
       }
     ]
   },

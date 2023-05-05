@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const FavBlocks = () => {
+    let navigate = useNavigate();
     let [selected, setSelected] = useState([]);
     
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(selected);
         // storage 저장하는 코드 입력
+        navigate('/profile-set');
     };
 
     const handleSelect = (e) => {
