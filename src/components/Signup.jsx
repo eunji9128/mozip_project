@@ -3,6 +3,7 @@ import LockForm from "./LockForm";
 import FavBlocks from "./FavBlocks";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import ProfileSetBlocks from "./ProfileSetBlocks";
 
 export const SignupName = () => {
     let navigate = useNavigate();
@@ -63,6 +64,19 @@ export const Favorites = () => {
                 내 관심사에 딱 맞는 프로젝트를 추천해드릴게요!
             </Content>
             <FavBlocks />
+        </Container>
+    )
+}
+
+export const ProfileSet = () => {
+    return (
+        <Container>
+            <h1>허성원님!<br />프로필을 선택해보세요!</h1>
+            <Content>
+                새롭게 만날 사람들이 나를 더 잘 알 수 있도록<br />
+                나를 잘 나타내는 프로필을 선택해주세요.
+            </Content>
+            <ProfileSetBlocks />
         </Container>
     )
 }
