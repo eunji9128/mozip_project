@@ -17,19 +17,33 @@ const FavBlocks = () => {
         e.preventDefault();
         const targetId = e.target.closest("[id]").id;
         let copy = [...selected];
-        copy.push(targetId);
-        setSelected(copy);
+        const isExist = copy.find((elem)=>{ if (elem == targetId) return true; });
 
-        console.log(selected, targetId);
-        if (targetId === "pet") {
-            document.getElementById(targetId).style.background = "url(/favSpBlockActive.svg)"
+        if (isExist) {
+            copy = copy.filter((elem) => { if (elem !== targetId) return true; })
+            if (targetId === "pet") {
+                document.getElementById(targetId).style.background = "url(/favSpBlock.svg)"
+            }
+            else {document.getElementById(targetId).style.background = "#737373"}
+        } else {
+            copy.push(targetId);
+            if (targetId === "pet") {
+                document.getElementById(targetId).style.background = "url(/favSpBlockActive.svg)"
+            }
+            else {document.getElementById(targetId).style.background = "#d4d4d4"}
         }
-        else {document.getElementById(targetId).style.background = "#d4d4d4"}
+        setSelected(copy);
+        console.log(selected, targetId);
+    }
+
+    const handleDrag = (e) => {
+        e.preventDefault();
+        console.log(e.touches[0].clientX);
     }
 
     return (
         <>
-            <Container>
+            <Container id="favContainer" onTouchStart={(e) => handleDrag(e)}>
                 <FlexBlock justifyContent={"start"}>
                     <Block>
                         <FlexBlock
@@ -72,7 +86,7 @@ const FavBlocks = () => {
                         </FlexBlock>
                     </Block>
                 </FlexBlock>
-                <FlexBlock>
+                <FlexBlock width="548px">
                     <FlexBlock
                         width={"180px"}
                         height={"180px"}
@@ -155,10 +169,12 @@ const Content = styled.p`
 `
 
 const Container = styled.div`
-    width: 548px;
+    // width: 548px;
+    width: 100vw;
     padding: 16px;
     text-align: left;
     margin-top: 34px;
+    overflow-x: scroll;
 `
 
 const StyledBtn = styled.button`
