@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     // max-width: 100vw;
 }
 
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, p {
     inline-height: 0;
 }
 
-*:disabled {
-    background: #5b5b5b;
+button:disabled {
+    background-color: #737373;
 }
 `
