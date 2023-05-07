@@ -1,4 +1,5 @@
 import {createGlobalStyle} from 'styled-components'
+import { color } from './colorVar'
 
 export const supportDeviceSize = 420
 
@@ -15,7 +16,7 @@ font-size: 62.5%; // 1rem = 10px 로 변경 한 것, 바꾼 이유는 사파리�
 }
 
 body {
-    background: #000000;
+    background: ${color.gray900};
     width: 100vw;
     margin: 0;
     padding: 0;

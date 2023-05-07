@@ -7,7 +7,10 @@ import { GlobalStyle } from './style/styled';
 import { Favorites, ProfileSet, SignupBirth, SignupName } from './components/Signup';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Landing from './components/Landing';
-import Home from './components/Home';
+import Main from './Main/Main';
+import Home from './Main/Home';
+import Recommend from './Main/Recommend';
+import Completed from './Main/Completed';
 
 const basename = process.env.PUBLIC_URL;
 const routes = [
@@ -39,19 +42,19 @@ const routes = [
   },
   {
     path: '/home',
-    element: <Home />,
+    element: <Main />,
     children: [
       {
         path: '',
-        element: <h1>home main</h1>,
+        element: <Home />,
       },
       {
         path: 'recommend',
-        element: <h1>recommendation</h1>,
+        element: <Recommend />,
       },
       {
         path: 'completed',
-        element: <h1>completed</h1>,
+        element: <Completed />,
       }
     ]
   }
