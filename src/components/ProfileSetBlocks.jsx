@@ -4,11 +4,13 @@ import styled from "styled-components";
 
 const ProfileSetBlocks = () => {
     let [imgArr, setImgArr] = useState(new Array(12).fill(0));
+    let [selectedImg, setSelectedImg] = useState("url(/profile1.svg)");
     let navigate = useNavigate();
 
     const handleSelect = (idx) => {
-        console.log(idx);
-        let newSrc = "url(/profile" + (idx < 6 ? (idx + 1) : 1) + ".svg";
+        let newSrc = "url(/profile" + (idx < 6 ? (idx + 1) : 1) + ".svg)";
+        setSelectedImg(newSrc);
+        console.log(selectedImg);
         document.getElementById("selected-profile").style.backgroundImage = newSrc;
     }
 
@@ -22,7 +24,6 @@ const ProfileSetBlocks = () => {
         <Container flexDirection={"column"}>
             <SelectedProfile id="selected-profile" />
             <Container margin={"50px 0 0 0"}>
-                <form>
                 {
                     imgArr.map((data, idx) => {
                         return (
@@ -38,7 +39,6 @@ const ProfileSetBlocks = () => {
                         )
                     })
                 }
-                </form>
             </Container>
             <StyledBtn onClick={(e) => handleSubmit(e)}>이 프로필로 시작하기!</StyledBtn>
         </Container>
@@ -58,7 +58,7 @@ const Container = styled.div`
 const SelectedProfile = styled.div`
     width: 120px;
     height: 120px;
-    background: #d4d4d4;
+    background-image: url(/profile1.svg); // 초기 선택 이미지는 profile1.svg
     border-radius: 45px;
     margin-top: 60px;
     background-size: cover;

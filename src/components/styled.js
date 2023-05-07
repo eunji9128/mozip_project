@@ -1,6 +1,6 @@
 import {createGlobalStyle} from 'styled-components'
 
-export const supportDeviceSize = 360
+export const supportDeviceSize = 420
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -16,7 +16,7 @@ font-size: 62.5%; // 1rem = 10px 로 변경 한 것, 바꾼 이유는 사파리�
 
 body {
     background: #000000;
-    width: 360px;
+    width: 100vw;
     margin: 0;
     padding: 0;
     font-family: 'SUIT', sans-serif, Roboto;
@@ -24,10 +24,16 @@ body {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    // max-width: 100vw;
 }
 
 div, span, input, button {
     box-sizing: border-box;
+    -ms-overflow-style: none;
+}
+
+div::-webkit-scrollbar{
+    display:none;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -35,7 +41,7 @@ h1, h2, h3, h4, h5, h6, p {
     inline-height: 0;
 }
 
-*:disabled {
-    background: #5b5b5b;
+button:disabled {
+    background-color: #737373;
 }
 `
