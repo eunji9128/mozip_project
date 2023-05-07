@@ -7,6 +7,7 @@ import { GlobalStyle } from './components/styled';
 import { Favorites, ProfileSet, SignupBirth, SignupName } from './components/Signup';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Landing from './components/Landing';
+import Home from './components/Home';
 
 const basename = process.env.PUBLIC_URL;
 const routes = [
@@ -38,7 +39,21 @@ const routes = [
   },
   {
     path: '/home',
-    element: <h1>home</h1>,
+    element: <Home />,
+    children: [
+      {
+        path: '',
+        element: <h1>home main</h1>,
+      },
+      {
+        path: 'recommend',
+        element: <h1>recommendation</h1>,
+      },
+      {
+        path: 'completed',
+        element: <h1>completed</h1>,
+      }
+    ]
   }
 ]
 

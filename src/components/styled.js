@@ -30,6 +30,7 @@ body {
 div, span, input, button {
     box-sizing: border-box;
     -ms-overflow-style: none;
+    font-family: 'SUIT', sans-serif, Roboto;
 }
 
 div::-webkit-scrollbar{
