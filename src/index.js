@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 // import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { GlobalStyle } from './components/styled';
+import { GlobalStyle } from './style/styled';
 import { Favorites, ProfileSet, SignupBirth, SignupName } from './components/Signup';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Landing from './components/Landing';

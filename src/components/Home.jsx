@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { Outlet } from "react-router"
 import styled from "styled-components"
+import { color } from "../style/colorVar.js";
 
 const Home = () => {
     let [tabs, setTabs] = useState([true, false, false]);
     // 현재 컴포넌트에 따라 tab focus pseudo class style 적용하는 코드 입력
     // useMatch 사용 가능?
-
     return (
         <Container>
             <Header>
@@ -52,10 +52,11 @@ const TabBtn = styled.button`
     font-size: 18px;
     font-weight: bold;
     border: none;
-    color: #ffffff;
+    color: ${color.gray500};
 
     &:focus {
         text-decoration: underline;
+        color: ${color.gray50};
     }
 `
 
