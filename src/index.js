@@ -29,13 +29,17 @@ const routes = [
       {
         path: 'profile-set',
         element: <ProfileSet />,
-      }
+      },
     ]
   },
   {
     path: '/landing',
     element: <Landing />,
   },
+  {
+    path: '/home',
+    element: <h1>home</h1>,
+  }
 ]
 
 const router = createBrowserRouter(routes, {basename: basename});
