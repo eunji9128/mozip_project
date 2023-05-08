@@ -12,17 +12,27 @@ const Home = () => {
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
+                {/* 데이터 바인딩으로 변환해줘야 함 */}
             </Container>
             <Container margin={"16px 0 0 0"}>
                 <h1>새로운 프로젝트</h1>
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
+                {/* 데이터 바인딩으로 변환해줘야 함 */}
             </Container>
             <Container margin={"16px 0 0 0"}>
                 <h1>새로운 멤버</h1>
-                <MemberCard />
+                <div style={{overflowX: "scroll"}}>
+                    <FlexBox>
+                        <MemberCard />
+                        <MemberCard />
+                        <MemberCard />
+                        {/* 데이터 바인딩으로 변환해줘야 함 */}
+                    </FlexBox>
+                </div>
             </Container>
+            {/* Bottom Navigation Bar 구현 필요 */}
         </Container>
     )
 };
@@ -49,6 +59,13 @@ const StyledBtn = styled.button`
     color: ${color.gray900};
     font-size: 18px;
     font-weight: bold;
+`
+
+const FlexBox = styled.div`
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
 `
 
 export default Home

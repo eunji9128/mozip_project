@@ -3,7 +3,7 @@ import { color } from "../style/colorVar";
 
 export const ProjectCard = () => {
     return (
-        <Container flexDirection={"row"}>
+        <Container flexDirection={"row"} padding={"8px"} margin={"0 0 8px 0"}>
             <CardImg />
             <ContentBox>
                 <BadgeGroup>
@@ -31,7 +31,7 @@ export const ProjectCard = () => {
 
 export const MemberCard = () => {
     return (
-        <Container>
+        <Container width={"300px"} padding={"16px 8px"} margin={"0 8px 0 0"}>
             <Header>
                 <Box>
                     <MemberImg />
@@ -42,7 +42,11 @@ export const MemberCard = () => {
                 </MemberInfo>
                 <ChatBtn>채팅</ChatBtn>
             </Header>
-            <BadgeGroup height={"auto"} fontSize={"16px"}>
+            <BadgeGroup height={"auto"} fontSize={"14px"} padding={"16px 8px 0 8px"}>
+                <Badge>여행</Badge>
+                <Badge>여행</Badge>
+                <Badge>여행</Badge>
+                <Badge>여행</Badge>
                 <Badge>여행</Badge>
                 <Badge>여행</Badge>
                 <Badge>여행</Badge>
@@ -53,16 +57,15 @@ export const MemberCard = () => {
 };
 
 const Container = styled.div`
-    width: 100%;
-    height: 110px;
+    width: ${props => props.width || "100%"};
     background: ${color.gray800};
     border-radius: 10px;
     display: flex;
     flex-direction: ${props => props.flexDirection || "column"};
     align-items: start;
     justify-content: center;
-    padding: 8px;
-    margin-bottom: 8px;
+    padding: ${props => props.padding || 0};
+    margin: ${props => props.margin || 0};
 `
 
 const CardImg = styled.div`
@@ -85,15 +88,17 @@ const BadgeGroup = styled.div`
     height: ${props => props.height || "20%"};
     display: flex;
     flex-direction: row;
-    font-size: ${props => props.fontSize || "12px"};
+    font-size: ${props => props.fontSize || "10px"};
     margin: auto;
+    padding: ${props => props.padding || 0};
+    flex-wrap: wrap;
 `
 
 const Badge = styled.div`
-    padding: 2px 10px;
-    margin: 0 4px 0 0;
+    padding: 4px 10px;
+    margin: 0 4px 4px 0;
     background: ${color.gray700};
-    border-radius: 10px;
+    border-radius: 15px;
     color: ${color.gray50};
     text-align: center;
 `
