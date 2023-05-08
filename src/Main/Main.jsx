@@ -51,7 +51,7 @@ const NavTabs = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 32px;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
 `
 
 const TabBtn = styled.button`
