@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   let navigate = useNavigate();
-  let [isLogin, setIsLogin] = useState(true);
+  let [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
     if (!isLogin) navigate('/name');

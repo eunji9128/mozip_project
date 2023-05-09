@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom/client';
 // import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { GlobalStyle } from './components/styled';
+import { GlobalStyle } from './style/styled';
 import { Favorites, ProfileSet, SignupBirth, SignupName } from './components/Signup';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Landing from './components/Landing';
+import Main from './Main/Main';
+import Home from './Main/Home';
+import Recommend from './Main/Recommend';
+import Completed from './Main/Completed';
 
 const basename = process.env.PUBLIC_URL;
 const routes = [
@@ -29,13 +33,31 @@ const routes = [
       {
         path: 'profile-set',
         element: <ProfileSet />,
-      }
+      },
     ]
   },
   {
     path: '/landing',
     element: <Landing />,
   },
+  {
+    path: '/home',
+    element: <Main />,
+    children: [
+      {
+        path: '',
+        element: <Home />,
+      },
+      {
+        path: 'recommend',
+        element: <Recommend />,
+      },
+      {
+        path: 'completed',
+        element: <Completed />,
+      }
+    ]
+  }
 ]
 
 const router = createBrowserRouter(routes, {basename: basename});

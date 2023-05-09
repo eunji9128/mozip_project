@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const Landing = () => {
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('가입되었습니다');
-        // navigate 설정 코드 입력
+        navigate('/home');
     }
 
     return (
