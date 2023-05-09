@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Outlet, useNavigate } from "react-router"
 import styled from "styled-components"
 import { color } from "../style/colorVar.js";
+import Navbar from "./Navbar.jsx";
 
 const Main = () => {
     let [tabs, setTabs] = useState([true, false, false]);
@@ -18,13 +19,15 @@ const Main = () => {
         <Container>
             <Header>
                 <SmallLogo />
-                <NavTabs>
+                <TabGroup>
                     <TabBtn id="" onClick={(e) => handleNavigate(e)}>홈</TabBtn>
                     <TabBtn id="recommend" onClick={(e) => handleNavigate(e)}>추천</TabBtn>
                     <TabBtn id="completed" onClick={(e) => handleNavigate(e)}>완료된 프로젝트</TabBtn>
-                </NavTabs>
+                </TabGroup>
             </Header>
             <Outlet />
+            <div style={{width: "100%", height: "60px"}}></div>
+            <Navbar />
         </Container>
     )
 }
@@ -47,7 +50,7 @@ const SmallLogo = styled.div`
     background-image: url(/mozip_logo_small.svg);
 `
 
-const NavTabs = styled.div`
+const TabGroup = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 32px;
