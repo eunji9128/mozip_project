@@ -1,30 +1,36 @@
 import styled from "styled-components";
 import { color } from "../style/colorVar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const handleClick = () => {
-        // navagation 기능 및 button activated 스타일 적용 코드
-    }
 
     return (
         <Container>
             <IconGroup>
-                <Icon>
-                    <span class="material-icons">home</span>
-                    <p>홈</p>
-                </Icon>
-                <Icon>
-                    <span class="material-icons">sms</span>
-                    <p>채팅</p>
-                </Icon>
-                <Icon>
-                    <span class="material-icons">wb_sunny</span>
-                    <p>성향</p>
-                </Icon>
-                <Icon>
-                    <span class="material-icons">person_outline</span>
-                    <p>마이페이지</p>
-                </Icon>
+                <StyledLink to="/home">
+                    <Icon>
+                        <span className="material-icons">home</span>
+                        <p>홈</p>
+                    </Icon>
+                </StyledLink>
+                <StyledLink to="/chat">
+                    <Icon>
+                        <span className="material-icons">sms</span>
+                        <p>채팅</p>
+                    </Icon>
+                </StyledLink>
+                <StyledLink to="/personal">
+                    <Icon>
+                        <span className="material-icons">wb_sunny</span>
+                        <p>성향</p>
+                    </Icon>
+                </StyledLink>
+                <StyledLink to="/mypage">
+                    <Icon>
+                        <span className="material-icons">person_outline</span>
+                        <p>마이페이지</p>
+                    </Icon>
+                </StyledLink>
             </IconGroup>
         </Container>
     )
@@ -43,6 +49,10 @@ const Container = styled.div`
 const IconGroup = styled.div`
     padding: 8px 0;
     display: flex;
+`
+
+const StyledLink = styled(Link)`
+    margin: auto;
 `
 
 const Icon = styled.div`

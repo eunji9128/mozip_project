@@ -11,6 +11,7 @@ import Main from './Main/Main';
 import Home from './Main/Home';
 import Recommend from './Main/Recommend';
 import Completed from './Main/Completed';
+import Personal from './Personal/Personal';
 
 const basename = process.env.PUBLIC_URL;
 const routes = [
@@ -57,6 +58,18 @@ const routes = [
         element: <Completed />,
       }
     ]
+  },
+  {
+    path: '/personal',
+    element: <Personal />,
+  },
+  {
+    path: '/chat',
+    element: <h1>chat page</h1>,
+  },
+  {
+    path: '/mypage',
+    element: <h1>my page</h1>,
   }
 ]
 

@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from "react-router"
 import styled from "styled-components"
 import { color } from "../style/colorVar.js";
 import Navbar from "./Navbar.jsx";
+import axios from "axios";
 
 const Main = () => {
     let [tabs, setTabs] = useState([true, false, false]);
@@ -15,6 +16,28 @@ const Main = () => {
         navigate(`/home/${e.target.id}`);
     }
 
+    // axios.get("http://ec2-52-79-242-116.ap-northeast-2.compute.amazonaws.com:8000/api/topics/", {}, {
+    //     withCredentials: true,
+    // })
+    //     .then((res) => {
+    //         console.log(res);
+    //     })
+    //     .catch((err) => {
+    //         console.error(err);
+    //     }
+    // );
+
+    // axios.get("http://ec2-52-79-242-116.ap-northeast-2.compute.amazonaws.com:8000/api/projects/", {}, {
+    //     withCredentials: true,
+    // })
+    //     .then((res) => {
+    //         console.log(res);
+    //     })
+    //     .catch((err) => {
+    //         console.error(err);
+    //     }
+    // );
+
     return (
         <Container>
             <Header>
@@ -26,7 +49,7 @@ const Main = () => {
                 </TabGroup>
             </Header>
             <Outlet />
-            <div style={{width: "100%", height: "60px"}}></div>
+            <div style={{ width: "100%", height: "60px" }}></div>
             <Navbar />
         </Container>
     )
