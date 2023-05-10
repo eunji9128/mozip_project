@@ -28,7 +28,7 @@ body {
     // max-width: 100vw;
 }
 
-div, span, input, button {
+div, span, input, button, select {
     box-sizing: border-box;
     -ms-overflow-style: none;
     font-family: 'SUIT', sans-serif, Roboto;
