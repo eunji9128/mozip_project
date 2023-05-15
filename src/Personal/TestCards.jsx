@@ -1,9 +1,17 @@
 import styled from "styled-components";
 import { color } from "../style/colorVar";
+import { useNavigate } from "react-router";
 
 const TestCard = (props) => {
+    const navigate = useNavigate();
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate(`./${props.test.id}`);
+    }
+    
     return (
-        <Container>
+        <Container onClick={(e)=>{handleClick(e)}}>
             <ImgBox />
             <Content>
                 <h1>{props.test.name}</h1>

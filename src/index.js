@@ -12,6 +12,7 @@ import Home from './Main/Home';
 import Recommend from './Main/Recommend';
 import Completed from './Main/Completed';
 import Personal from './Personal/Personal';
+import PersonalHome from './Personal/PersonalHome';
 
 const basename = process.env.PUBLIC_URL;
 const routes = [
@@ -61,7 +62,17 @@ const routes = [
   },
   {
     path: '/personal',
-    element: <Personal />,
+    element: <PersonalHome />,
+    children: [
+      {
+        path: '',
+        element: <Personal />
+      },
+      {
+        path: ':id',
+        element: <h1>test1</h1>,
+      }
+    ]
   },
   {
     path: '/chat',

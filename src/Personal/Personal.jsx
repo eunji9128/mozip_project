@@ -46,11 +46,13 @@ const Personal = () => {
             <TestCardGroup>
                 {
                     tests.map((test, i) => {
-                        return <TestCard key={i} test={test} />
+                        return (
+                            <TestCard key={i} test={test} />
+                        )
                     })
                 }
             </TestCardGroup>
-            <Navbar />
+            {/* <Navbar /> */}
         </Container>
     )
 }
