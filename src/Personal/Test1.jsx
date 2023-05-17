@@ -3,44 +3,22 @@ import { color } from "../style/colorVar"
 import { useEffect } from "react";
 import React from "react";
 import { useState } from "react";
+import { colorData } from "./colorData";
 
 const Test1 = () => {
     let [step, setStep] = useState(0);
     
-    let colorData = [
-        {
-            step: 0,
-            row: 2,
-            column: 2,
-            mainColor: "#49d7d9",
-            pickColor: "#88dddf",
-            pickId: 1,
-        },
-        {
-            step: 1,
-            row: 2,
-            column: 2,
-            mainColor: "#ba3a13",
-            pickColor: "#ba3a31",
-            pickId: 3,
-        },
-        {
-            step: 2,
-            row: 3,
-            column: 3,
-            mainColor: "#53672a",
-            pickColor: "#5e702c",
-            pickId: 1,
-        },
-    ]
-
     let grid = new Array(colorData[step].row*colorData[step].column).fill(0);
     
     useEffect(() => {
         if (step !== 0) {
-            document.getElementsByClassName('colorGrid')[colorData[step-1].pickId].style.backgroundColor = colorData[step].mainColor;
+            console.log('debug1: ', colorData[step-1].pickId, colorData[step].mainColor);
+            for (let i=0; i<(colorData[step-1].row * colorData[step-1].column); i++) {
+                document.getElementsByClassName('colorGrid')[i].style.backgroundColor = colorData[step].mainColor;
+            }
         }
         document.getElementById(colorData[step].pickId.toString()).style.backgroundColor = colorData[step].pickColor;
+        console.log('debug2: ', colorData[step].pickId, colorData[step].pickColor);
     },[step])
 
     // useEffect(() => {
